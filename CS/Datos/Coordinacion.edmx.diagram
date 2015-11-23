@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eff3010494a6499ebc4f601bd79d18b7" Name="Diagram1">
+        <EntityTypeShape EntityType="CoordinacionModel.Alumno" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Carrera" Width="1.5" PointX="2.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.CarreraMaestro" Width="1.5" PointX="5.125" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Cita" Width="1.5" PointX="7.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Coordinador" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.DiaMateria" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Grupo" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.HorarioAlumno" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Maestro" Width="1.5" PointX="2.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Materia" Width="1.5" PointX="0.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.MateriaDelGrupo" Width="1.75" PointX="0.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.MateriasSemestre" Width="1.5" PointX="9.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Reticula" Width="1.5" PointX="0.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.ReticulaMateria" Width="1.5" PointX="3.875" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Semestre" Width="1.5" PointX="5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.SemestreHorario" Width="1.5" PointX="7.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoordinacionModel.Usuario" Width="1.5" PointX="4.75" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="CoordinacionModel.FK_HorarioAlumno_Alumno" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_Carrera_Reticula" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_CarreraMaestro_Carrera" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_Usuario_Carrera" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_CarreraMaestro_Maestro" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_Cita_Coordinador" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_SemestreHorario_Coordinador" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_DiaMateria_MateriaDelGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_Grupo_MateriaDelGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_Semestre_Grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_ReticulaMateria_Materia" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_MateriasSemestre_SemestreHorario" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_ReticulaMateria_Reticula" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_SemestreHorario_Semestre" ManuallyRouted="false" />
+        <AssociationConnector Association="CoordinacionModel.FK_ReticulaMateria_ReticulaMateria" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,41 @@
+###############################################################################
+# NETHook function table			
+###############################################################################
+#
+# Name		: Nethook.ft
+# NETHook 	: Nethook.dll
+# Date		: 
+# Author	: 
+# Notes		: MAKE SURE TO RENAME 'Nethook' with the name of your DLL
+# Language	: C#
+#
+###############################################################################
+
+
+######################
+# ASSIGN A UNIQUE NAME
+######################
+APPLICATION "ADD_UNIQUE_PROJECTNAME_HERE"
+
+######################
+# NETHook LOCATION
+######################
+#
+# Update paths below to match your install path and project name.
+FUNC_DLL   "CHOOKS\Nethook.dll"
+RES_DLL    "SAME"
+dnRES_NAME "Nethook.FunctionTable.Resource"
+CATEGORY   "MY ADDON"
+
+##############################################################################
+# Public functions here
+##############################################################################
+#
+# The main system entry point defined in NethookMain.cs
+FUNCTION NET "Run"
+    dnSPNG "Run16"
+    dnLPNG "Run24"
+    dnTIP  "RunTip"
+END_FUNCTION
+
+# EOF

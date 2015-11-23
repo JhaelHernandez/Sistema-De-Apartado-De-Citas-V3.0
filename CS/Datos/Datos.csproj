@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{998CA388-27D8-44C0-8746-874A4A84D173}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Datos</RootNamespace>
+    <AssemblyName>Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NETHook3_0, Version=1.0.5613.17720, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\mcamx9\chooks\NETHook3_0.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alumno.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Carrera.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarreraMaestro.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cita.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinacion.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coordinacion.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coordinacion.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinador.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiaMateria.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionTable\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Grupo.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HorarioAlumno.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maestro.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Materia.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MateriaDelGrupo.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MateriasSemestre.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reticula.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReticulaMateria.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Semestre.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SemestreHorario.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Coordinacion.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Coordinacion.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Coordinacion.edmx.diagram">
+      <DependentUpon>Coordinacion.edmx</DependentUpon>
+    </None>
+    <None Include="FunctionTable\Nethook.ft" />
+    <None Include="packages.config" />
+    <None Include="ReadMeFirst\ProjectSetup.docx" />
+    <None Include="ReadMeFirst\ProjectSetup.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FunctionTable\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Coordinacion.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Coordinacion.edmx</DependentUpon>
+      <LastGenOutput>Coordinacion.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Coordinacion.edmx.sql" />
+    <Content Include="Coordinacion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Coordinacion.edmx</DependentUpon>
+      <LastGenOutput>Coordinacion.cs</LastGenOutput>
+    </Content>
+    <Content Include="FunctionTable\Assets\Run16.png" />
+    <Content Include="FunctionTable\Assets\Run24.png" />
+    <Content Include="ReadMeFirst\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

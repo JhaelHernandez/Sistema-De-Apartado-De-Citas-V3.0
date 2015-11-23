@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<body class="hideItem">
+<div class="container-fluid banner text-center" id="banner" style="height: 231px;">
+    <div class="row">
+        <div class="col-md-12 line">
+            <div class="tablebox">
+                <div class="banner-text" id="bannertext" style="height: 231px;">
+                    <h1 class="hostyle" id="heads">Sedulous</h1>
+                    <p class="pstyle">We are Creative</p>
+                    <a href="#features" class="page-scroll arrow"><i class="fa fa-angle-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="btn btn-success" id="btnLogIn" style="position: fixed; right: 11px; z-index: 100; float: right; bottom: 38px; border-radius: 65px;" data-toggle="modal" data-target="#modalLogin"><span class="glyphicon glyphicon-user"></span></div>
+<div class="navbar navbar-inverse verdeHeader" id="header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Nombre de aplicación", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#index" div="#index" onclick="GoToDiv(this)">Inicio</a></li>
+                <li><a href="#about" div="#about" onclick="GoToDiv(this)">Acerca Dé</a></li>
+                <li><a href="#contact" div="#contact" onclick="GoToDiv(this)">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <footer class="col-md-12p ">
+        <div class="col-md-12 Footer naranjaFooter">
+            <p class="pFooter text-center">Instituto Tecnológico de Hermosillo, www.ith.mx, webmaster@ith.mx</p>
+            <p class="pFooter text-center">Ave. Tecnológico y Periférico Poniente S/N C.P. 83170 Colonia Sahuaro, Hermosillo Sonora, México</p>
+            <p class="pFooter text-center">Teléfonos: (01 662) 2 60 65 00</p>
+            <p class="pFooter text-center">Copyright © 2013 Instituto Tecnológico de Hermosillo. Algunos derechos reservados.</p>
+        </div>
+        
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/CS.js"></script>
+    <script src="~/Scripts/Shared.js"></script>
+@RenderSection("scripts", required: false)
+
+</body>
+</html>

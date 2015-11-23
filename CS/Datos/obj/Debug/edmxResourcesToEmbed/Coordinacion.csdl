@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoordinacionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alumno">
+    <Key>
+      <PropertyRef Name="AlumnoID" />
+    </Key>
+    <Property Name="AlumnoID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CitaID" Type="Int32" />
+    <NavigationProperty Name="HorarioAlumno" Relationship="Self.FK_HorarioAlumno_Alumno" FromRole="Alumno" ToRole="HorarioAlumno" />
+  </EntityType>
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="CarreraID" />
+    </Key>
+    <Property Name="CarreraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReticulaID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Reticula" Relationship="Self.FK_Carrera_Reticula" FromRole="Carrera" ToRole="Reticula" />
+    <NavigationProperty Name="CarreraMaestro" Relationship="Self.FK_CarreraMaestro_Carrera" FromRole="Carrera" ToRole="CarreraMaestro" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Carrera" FromRole="Carrera" ToRole="Usuario" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CarreraMaestro">
+    <Key>
+      <PropertyRef Name="CarreraMaestroID" />
+    </Key>
+    <Property Name="CarreraMaestroID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarreraID" Type="Int32" Nullable="false" />
+    <Property Name="MaestroID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Carrera" Relationship="Self.FK_CarreraMaestro_Carrera" FromRole="CarreraMaestro" ToRole="Carrera" />
+    <NavigationProperty Name="Maestro" Relationship="Self.FK_CarreraMaestro_Maestro" FromRole="CarreraMaestro" ToRole="Maestro" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="CitaID" />
+    </Key>
+    <Property Name="CitaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoordinadorID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Mensaje" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AlumnoID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Coordinador" Relationship="Self.FK_Cita_Coordinador" FromRole="Cita" ToRole="Coordinador" />
+  </EntityType>
+  <EntityType Name="Coordinador">
+    <Key>
+      <PropertyRef Name="CoordinadorID" />
+    </Key>
+    <Property Name="CoordinadorID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cita" Relationship="Self.FK_Cita_Coordinador" FromRole="Coordinador" ToRole="Cita" />
+    <NavigationProperty Name="SemestreHorario" Relationship="Self.FK_SemestreHorario_Coordinador" FromRole="Coordinador" ToRole="SemestreHorario" />
+  </EntityType>
+  <EntityType Name="DiaMateria">
+    <Key>
+      <PropertyRef Name="DiaID" />
+    </Key>
+    <Property Name="DiaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MateriaGrupoID" Type="Int32" />
+    <Property Name="Dia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="MateriaDelGrupo" Relationship="Self.FK_DiaMateria_MateriaDelGrupo" FromRole="DiaMateria" ToRole="MateriaDelGrupo" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="GrupoID" />
+    </Key>
+    <Property Name="GrupoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grupo1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Turno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MateriaGrupoID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MateriaDelGrupo" Relationship="Self.FK_Grupo_MateriaDelGrupo" FromRole="Grupo" ToRole="MateriaDelGrupo" />
+    <NavigationProperty Name="Semestre" Relationship="Self.FK_Semestre_Grupo" FromRole="Grupo" ToRole="Semestre" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HorarioAlumno">
+    <Key>
+      <PropertyRef Name="HorarioAlumnoID" />
+    </Key>
+    <Property Name="HorarioAlumnoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlumnoID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="MateriaGrupoID" Type="Int32" />
+    <NavigationProperty Name="Alumno" Relationship="Self.FK_HorarioAlumno_Alumno" FromRole="HorarioAlumno" ToRole="Alumno" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Maestro">
+    <Key>
+      <PropertyRef Name="MaestroID" />
+    </Key>
+    <Property Name="MaestroID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CarreraMaestro" Relationship="Self.FK_CarreraMaestro_Maestro" FromRole="Maestro" ToRole="CarreraMaestro" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Materia">
+    <Key>
+      <PropertyRef Name="MateriaID" />
+    </Key>
+    <Property Name="MateriaID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Creditos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ReticulaMateria" Relationship="Self.FK_ReticulaMateria_Materia" FromRole="Materia" ToRole="ReticulaMateria" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MateriaDelGrupo">
+    <Key>
+      <PropertyRef Name="MateriaGrupoID" />
+    </Key>
+    <Property Name="MateriaGrupoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MateriaID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaestroID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="HoraInicio" Type="Int32" />
+    <Property Name="HoraFinal" Type="Int32" />
+    <NavigationProperty Name="DiaMateria" Relationship="Self.FK_DiaMateria_MateriaDelGrupo" FromRole="MateriaDelGrupo" ToRole="DiaMateria" />
+    <NavigationProperty Name="Grupo" Relationship="Self.FK_Grupo_MateriaDelGrupo" FromRole="MateriaDelGrupo" ToRole="Grupo" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MateriasSemestre">
+    <Key>
+      <PropertyRef Name="MateriaID" />
+    </Key>
+    <Property Name="MateriaID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SemestreHorarioID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SemestreHorario" Relationship="Self.FK_MateriasSemestre_SemestreHorario" FromRole="MateriasSemestre" ToRole="SemestreHorario" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Reticula">
+    <Key>
+      <PropertyRef Name="ReticulaID" />
+    </Key>
+    <Property Name="ReticulaID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Creditos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carrera" Relationship="Self.FK_Carrera_Reticula" FromRole="Reticula" ToRole="Carrera" />
+    <NavigationProperty Name="ReticulaMateria" Relationship="Self.FK_ReticulaMateria_Reticula" FromRole="Reticula" ToRole="ReticulaMateria" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ReticulaMateria">
+    <Key>
+      <PropertyRef Name="ReiticulaMateriaID" />
+    </Key>
+    <Property Name="ReiticulaMateriaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReticulaID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MateriaID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Materia" Relationship="Self.FK_ReticulaMateria_Materia" FromRole="ReticulaMateria" ToRole="Materia" />
+    <NavigationProperty Name="Reticula" Relationship="Self.FK_ReticulaMateria_Reticula" FromRole="ReticulaMateria" ToRole="Reticula" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Semestre">
+    <Key>
+      <PropertyRef Name="SemestreID" />
+    </Key>
+    <Property Name="SemestreID" Type="Int32" Nullable="false" />
+    <Property Name="GrupoID" Type="Int32" Nullable="false" />
+    <Property Name="Semestre1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Grupo" Relationship="Self.FK_Semestre_Grupo" FromRole="Semestre" ToRole="Grupo" />
+    <NavigationProperty Name="SemestreHorario" Relationship="Self.FK_SemestreHorario_Semestre" FromRole="Semestre" ToRole="SemestreHorario" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SemestreHorario">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoordinadorID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SemestreID" Type="Int32" Nullable="false" />
+    <Property Name="Año" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Coordinador" Relationship="Self.FK_SemestreHorario_Coordinador" FromRole="SemestreHorario" ToRole="Coordinador" />
+    <NavigationProperty Name="MateriasSemestre" Relationship="Self.FK_MateriasSemestre_SemestreHorario" FromRole="SemestreHorario" ToRole="MateriasSemestre" />
+    <NavigationProperty Name="Semestre" Relationship="Self.FK_SemestreHorario_Semestre" FromRole="SemestreHorario" ToRole="Semestre" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="NoControl" />
+    </Key>
+    <Property Name="NoControl" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CarreraID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carrera" Relationship="Self.FK_Usuario_Carrera" FromRole="Usuario" ToRole="Carrera" />
+    <Property Name="Activo" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_HorarioAlumno_Alumno">
+    <End Role="Alumno" Type="Self.Alumno" Multiplicity="0..1" />
+    <End Role="HorarioAlumno" Type="Self.HorarioAlumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alumno">
+        <PropertyRef Name="AlumnoID" />
+      </Principal>
+      <Dependent Role="HorarioAlumno">
+        <PropertyRef Name="AlumnoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Carrera_Reticula">
+    <End Role="Reticula" Type="Self.Reticula" Multiplicity="1" />
+    <End Role="Carrera" Type="Self.Carrera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reticula">
+        <PropertyRef Name="ReticulaID" />
+      </Principal>
+      <Dependent Role="Carrera">
+        <PropertyRef Name="ReticulaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraMaestro_Carrera">
+    <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+    <End Role="CarreraMaestro" Type="Self.CarreraMaestro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="CarreraID" />
+      </Principal>
+      <Dependent Role="CarreraMaestro">
+        <PropertyRef Name="CarreraID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Carrera">
+    <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="CarreraID" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="CarreraID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraMaestro_Maestro">
+    <End Role="Maestro" Type="Self.Maestro" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CarreraMaestro" Type="Self.CarreraMaestro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maestro">
+        <PropertyRef Name="MaestroID" />
+      </Principal>
+      <Dependent Role="CarreraMaestro">
+        <PropertyRef Name="MaestroID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cita_Coordinador">
+    <End Role="Coordinador" Type="Self.Coordinador" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coordinador">
+        <PropertyRef Name="CoordinadorID" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="CoordinadorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SemestreHorario_Coordinador">
+    <End Role="Coordinador" Type="Self.Coordinador" Multiplicity="1" />
+    <End Role="SemestreHorario" Type="Self.SemestreHorario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coordinador">
+        <PropertyRef Name="CoordinadorID" />
+      </Principal>
+      <Dependent Role="SemestreHorario">
+        <PropertyRef Name="CoordinadorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiaMateria_MateriaDelGrupo">
+    <End Role="MateriaDelGrupo" Type="Self.MateriaDelGrupo" Multiplicity="0..1" />
+    <End Role="DiaMateria" Type="Self.DiaMateria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MateriaDelGrupo">
+        <PropertyRef Name="MateriaGrupoID" />
+      </Principal>
+      <Dependent Role="DiaMateria">
+        <PropertyRef Name="MateriaGrupoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grupo_MateriaDelGrupo">
+    <End Role="MateriaDelGrupo" Type="Self.MateriaDelGrupo" Multiplicity="1" />
+    <End Role="Grupo" Type="Self.Grupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MateriaDelGrupo">
+        <PropertyRef Name="MateriaGrupoID" />
+      </Principal>
+      <Dependent Role="Grupo">
+        <PropertyRef Name="MateriaGrupoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Semestre_Grupo">
+    <End Role="Grupo" Type="Self.Grupo" Multiplicity="1" />
+    <End Role="Semestre" Type="Self.Semestre" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="GrupoID" />
+      </Principal>
+      <Dependent Role="Semestre">
+        <PropertyRef Name="SemestreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReticulaMateria_Materia">
+    <End Role="Materia" Type="Self.Materia" Multiplicity="1" />
+    <End Role="ReticulaMateria" Type="Self.ReticulaMateria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materia">
+        <PropertyRef Name="MateriaID" />
+      </Principal>
+      <Dependent Role="ReticulaMateria">
+        <PropertyRef Name="MateriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MateriasSemestre_SemestreHorario">
+    <End Role="SemestreHorario" Type="Self.SemestreHorario" Multiplicity="1" />
+    <End Role="MateriasSemestre" Type="Self.MateriasSemestre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemestreHorario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MateriasSemestre">
+        <PropertyRef Name="SemestreHorarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReticulaMateria_Reticula">
+    <End Role="Reticula" Type="Self.Reticula" Multiplicity="1" />
+    <End Role="ReticulaMateria" Type="Self.ReticulaMateria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reticula">
+        <PropertyRef Name="ReticulaID" />
+      </Principal>
+      <Dependent Role="ReticulaMateria">
+        <PropertyRef Name="ReticulaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SemestreHorario_Semestre">
+    <End Role="Semestre" Type="Self.Semestre" Multiplicity="1" />
+    <End Role="SemestreHorario" Type="Self.SemestreHorario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semestre">
+        <PropertyRef Name="SemestreID" />
+      </Principal>
+      <Dependent Role="SemestreHorario">
+        <PropertyRef Name="SemestreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CoordinacionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alumno" EntityType="Self.Alumno" />
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" />
+    <EntitySet Name="CarreraMaestro" EntityType="Self.CarreraMaestro" />
+    <EntitySet Name="Cita" EntityType="Self.Cita" />
+    <EntitySet Name="Coordinador" EntityType="Self.Coordinador" />
+    <EntitySet Name="DiaMateria" EntityType="Self.DiaMateria" />
+    <EntitySet Name="Grupo" EntityType="Self.Grupo" />
+    <EntitySet Name="HorarioAlumno" EntityType="Self.HorarioAlumno" />
+    <EntitySet Name="Maestro" EntityType="Self.Maestro" />
+    <EntitySet Name="Materia" EntityType="Self.Materia" />
+    <EntitySet Name="MateriaDelGrupo" EntityType="Self.MateriaDelGrupo" />
+    <EntitySet Name="MateriasSemestre" EntityType="Self.MateriasSemestre" />
+    <EntitySet Name="Reticula" EntityType="Self.Reticula" />
+    <EntitySet Name="ReticulaMateria" EntityType="Self.ReticulaMateria" />
+    <EntitySet Name="Semestre" EntityType="Self.Semestre" />
+    <EntitySet Name="SemestreHorario" EntityType="Self.SemestreHorario" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_HorarioAlumno_Alumno" Association="Self.FK_HorarioAlumno_Alumno">
+      <End Role="Alumno" EntitySet="Alumno" />
+      <End Role="HorarioAlumno" EntitySet="HorarioAlumno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Carrera_Reticula" Association="Self.FK_Carrera_Reticula">
+      <End Role="Reticula" EntitySet="Reticula" />
+      <End Role="Carrera" EntitySet="Carrera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraMaestro_Carrera" Association="Self.FK_CarreraMaestro_Carrera">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="CarreraMaestro" EntitySet="CarreraMaestro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Carrera" Association="Self.FK_Usuario_Carrera">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraMaestro_Maestro" Association="Self.FK_CarreraMaestro_Maestro">
+      <End Role="Maestro" EntitySet="Maestro" />
+      <End Role="CarreraMaestro" EntitySet="CarreraMaestro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cita_Coordinador" Association="Self.FK_Cita_Coordinador">
+      <End Role="Coordinador" EntitySet="Coordinador" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SemestreHorario_Coordinador" Association="Self.FK_SemestreHorario_Coordinador">
+      <End Role="Coordinador" EntitySet="Coordinador" />
+      <End Role="SemestreHorario" EntitySet="SemestreHorario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiaMateria_MateriaDelGrupo" Association="Self.FK_DiaMateria_MateriaDelGrupo">
+      <End Role="MateriaDelGrupo" EntitySet="MateriaDelGrupo" />
+      <End Role="DiaMateria" EntitySet="DiaMateria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grupo_MateriaDelGrupo" Association="Self.FK_Grupo_MateriaDelGrupo">
+      <End Role="MateriaDelGrupo" EntitySet="MateriaDelGrupo" />
+      <End Role="Grupo" EntitySet="Grupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Semestre_Grupo" Association="Self.FK_Semestre_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Semestre" EntitySet="Semestre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReticulaMateria_Materia" Association="Self.FK_ReticulaMateria_Materia">
+      <End Role="Materia" EntitySet="Materia" />
+      <End Role="ReticulaMateria" EntitySet="ReticulaMateria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MateriasSemestre_SemestreHorario" Association="Self.FK_MateriasSemestre_SemestreHorario">
+      <End Role="SemestreHorario" EntitySet="SemestreHorario" />
+      <End Role="MateriasSemestre" EntitySet="MateriasSemestre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReticulaMateria_Reticula" Association="Self.FK_ReticulaMateria_Reticula">
+      <End Role="Reticula" EntitySet="Reticula" />
+      <End Role="ReticulaMateria" EntitySet="ReticulaMateria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SemestreHorario_Semestre" Association="Self.FK_SemestreHorario_Semestre">
+      <End Role="Semestre" EntitySet="Semestre" />
+      <End Role="SemestreHorario" EntitySet="SemestreHorario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReticulaMateria_ReticulaMateria" Association="CoordinacionModel.FK_ReticulaMateria_ReticulaMateria">
+      <End Role="ReticulaMateria" EntitySet="ReticulaMateria" />
+      <End Role="ReticulaMateria1" EntitySet="ReticulaMateria" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_ReticulaMateria_ReticulaMateria">
+    <End Type="CoordinacionModel.ReticulaMateria" Role="ReticulaMateria" Multiplicity="1" />
+    <End Type="CoordinacionModel.ReticulaMateria" Role="ReticulaMateria1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ReticulaMateria">
+        <PropertyRef Name="ReiticulaMateriaID" />
+      </Principal>
+      <Dependent Role="ReticulaMateria1">
+        <PropertyRef Name="ReiticulaMateriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

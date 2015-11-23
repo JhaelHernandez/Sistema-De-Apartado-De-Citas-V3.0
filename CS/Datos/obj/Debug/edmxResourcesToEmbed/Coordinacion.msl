@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoordinacionModelStoreContainer" CdmEntityContainer="CoordinacionEntities">
+    <EntitySetMapping Name="Alumno">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Alumno)">
+        <MappingFragment StoreEntitySet="Alumno">
+          <ScalarProperty Name="AlumnoID" ColumnName="AlumnoID" />
+          <ScalarProperty Name="CitaID" ColumnName="CitaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carrera">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Carrera)">
+        <MappingFragment StoreEntitySet="Carrera">
+          <ScalarProperty Name="CarreraID" ColumnName="CarreraID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ReticulaID" ColumnName="ReticulaID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarreraMaestro">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.CarreraMaestro)">
+        <MappingFragment StoreEntitySet="CarreraMaestro">
+          <ScalarProperty Name="CarreraMaestroID" ColumnName="CarreraMaestroID" />
+          <ScalarProperty Name="CarreraID" ColumnName="CarreraID" />
+          <ScalarProperty Name="MaestroID" ColumnName="MaestroID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cita">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Cita)">
+        <MappingFragment StoreEntitySet="Cita">
+          <ScalarProperty Name="CitaID" ColumnName="CitaID" />
+          <ScalarProperty Name="CoordinadorID" ColumnName="CoordinadorID" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+          <ScalarProperty Name="AlumnoID" ColumnName="AlumnoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coordinador">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Coordinador)">
+        <MappingFragment StoreEntitySet="Coordinador">
+          <ScalarProperty Name="CoordinadorID" ColumnName="CoordinadorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiaMateria">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.DiaMateria)">
+        <MappingFragment StoreEntitySet="DiaMateria">
+          <ScalarProperty Name="DiaID" ColumnName="DiaID" />
+          <ScalarProperty Name="MateriaGrupoID" ColumnName="MateriaGrupoID" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupo">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Grupo)">
+        <MappingFragment StoreEntitySet="Grupo">
+          <ScalarProperty Name="GrupoID" ColumnName="GrupoID" />
+          <ScalarProperty Name="Grupo1" ColumnName="Grupo1" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="MateriaGrupoID" ColumnName="MateriaGrupoID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HorarioAlumno">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.HorarioAlumno)">
+        <MappingFragment StoreEntitySet="HorarioAlumno">
+          <ScalarProperty Name="HorarioAlumnoID" ColumnName="HorarioAlumnoID" />
+          <ScalarProperty Name="AlumnoID" ColumnName="AlumnoID" />
+          <ScalarProperty Name="MateriaGrupoID" ColumnName="MateriaGrupoID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maestro">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Maestro)">
+        <MappingFragment StoreEntitySet="Maestro">
+          <ScalarProperty Name="MaestroID" ColumnName="MaestroID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materia">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Materia)">
+        <MappingFragment StoreEntitySet="Materia">
+          <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MateriaDelGrupo">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.MateriaDelGrupo)">
+        <MappingFragment StoreEntitySet="MateriaDelGrupo">
+          <ScalarProperty Name="MateriaGrupoID" ColumnName="MateriaGrupoID" />
+          <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+          <ScalarProperty Name="MaestroID" ColumnName="MaestroID" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="HoraFinal" ColumnName="HoraFinal" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MateriasSemestre">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.MateriasSemestre)">
+        <MappingFragment StoreEntitySet="MateriasSemestre">
+          <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+          <ScalarProperty Name="SemestreHorarioID" ColumnName="SemestreHorarioID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reticula">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Reticula)">
+        <MappingFragment StoreEntitySet="Reticula">
+          <ScalarProperty Name="ReticulaID" ColumnName="ReticulaID" />
+          <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReticulaMateria">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.ReticulaMateria)">
+        <MappingFragment StoreEntitySet="ReticulaMateria">
+          <ScalarProperty Name="ReiticulaMateriaID" ColumnName="ReiticulaMateriaID" />
+          <ScalarProperty Name="ReticulaID" ColumnName="ReticulaID" />
+          <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Semestre">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Semestre)">
+        <MappingFragment StoreEntitySet="Semestre">
+          <ScalarProperty Name="SemestreID" ColumnName="SemestreID" />
+          <ScalarProperty Name="GrupoID" ColumnName="GrupoID" />
+          <ScalarProperty Name="Semestre1" ColumnName="Semestre1" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemestreHorario">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.SemestreHorario)">
+        <MappingFragment StoreEntitySet="SemestreHorario">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CoordinadorID" ColumnName="CoordinadorID" />
+          <ScalarProperty Name="SemestreID" ColumnName="SemestreID" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(CoordinacionModel.Usuario)">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="NoControl" ColumnName="NoControl" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="CarreraID" ColumnName="CarreraID" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
