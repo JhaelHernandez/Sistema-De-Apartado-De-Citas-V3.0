@@ -16,6 +16,7 @@ namespace Negocios.Servicios
             {
                 db.Cita.Attach(cita);
                 db.Entry(cita).State = EntityState.Added;
+                //db.Cita.Add(cita); ---------->>>>>>>>>>>>>>>>>
                 db.SaveChanges();
 
                 return true;
@@ -29,6 +30,7 @@ namespace Negocios.Servicios
         public List<Cita> ObtenerCitas(string coordinadorID)
         {
             var cita = (from u in db.Cita select u).ToList();
+
             return cita;
         }
 
@@ -45,15 +47,18 @@ namespace Negocios.Servicios
 
             return cita;
         }
+
         public Cita ObtenerCitaPor(string coordinadorID, string alumnoID)
         {
             var cita = (from u in db.Cita where u.AlumnoID.Equals(alumnoID) && u.CoordinadorID.Equals(coordinadorID) select u).FirstOrDefault();
+
             return cita;
         }
 
         public List<Cita> ObtenerCitaPor(string coordinadorID, DateTime fecha)
         {
             var cita = (from u in db.Cita where u.Fecha.Equals(fecha) select u).ToList();
+
             return cita;
         }
 
@@ -76,6 +81,29 @@ namespace Negocios.Servicios
                 return false;
             }
         }
+
+        public bool BajaCita(string cooridinadorID, int idCita)
+        {
+            try
+            {
+                if (db != null)
+                    db.Dispose();
+
+                Cita cita = ObtenerCitaPor(cooridinadorID, idCita);
+
+                cita.Estado = -1;
+                db.Cita.Attach(cita);
+                db.Entry(cita).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool ActualizaCita(Cita cita)
         {
             try
@@ -102,7 +130,7 @@ namespace Negocios.Servicios
                 if (db != null)
                     db.Dispose();
 
-                var cita = ObtenerCitaPor(cooridinadorID, idCita);
+                Cita cita = ObtenerCitaPor(cooridinadorID, idCita);
 
                 db.Cita.Attach(cita);
                 db.Entry(cita).State = EntityState.Deleted;
