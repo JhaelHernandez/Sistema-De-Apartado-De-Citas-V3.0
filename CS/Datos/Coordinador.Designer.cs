@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Jhael\Documents\GitHub\Sistema-Apartado-Citas\CS\Datos\Coordinacion.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\Coordinador.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

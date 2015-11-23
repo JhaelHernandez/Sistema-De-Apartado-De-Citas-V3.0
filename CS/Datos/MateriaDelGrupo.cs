@@ -18,7 +18,6 @@ namespace Datos
         public MateriaDelGrupo()
         {
             this.DiaMateria = new HashSet<DiaMateria>();
-            this.Grupo = new HashSet<Grupo>();
         }
     
         public int MateriaGrupoID { get; set; }
@@ -27,10 +26,10 @@ namespace Datos
         public Nullable<int> HoraInicio { get; set; }
         public Nullable<int> HoraFinal { get; set; }
         public Nullable<bool> Activo { get; set; }
+        public Nullable<int> GrupoID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DiaMateria> DiaMateria { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grupo> Grupo { get; set; }
+        public virtual Grupo Grupo { get; set; }
     }
 }

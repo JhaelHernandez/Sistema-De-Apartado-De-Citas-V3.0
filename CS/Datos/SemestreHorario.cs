@@ -26,7 +26,6 @@ namespace Datos
         public string Año { get; set; }
         public Nullable<bool> Activo { get; set; }
     
-        public virtual Coordinador Coordinador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MateriasSemestre> MateriasSemestre { get; set; }
         public virtual Semestre Semestre { get; set; }

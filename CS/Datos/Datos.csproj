@@ -148,6 +148,9 @@
     <Compile Include="SemestreHorario.cs">
       <DependentUpon>Coordinacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Coordinacion.tt</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs">
       <DependentUpon>Coordinacion.tt</DependentUpon>
     </Compile>

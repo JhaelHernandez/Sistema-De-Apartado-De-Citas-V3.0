@@ -43,3 +43,17 @@ C:\Users\Alejandro\Documents\GitHub\Sistema-Apartado-De-Citas-v2\CS\Datos\obj\De
 C:\Users\Alejandro\Documents\GitHub\Sistema-Apartado-De-Citas-v2\CS\Datos\obj\Debug\Datos.dll
 C:\Users\Alejandro\Documents\GitHub\Sistema-Apartado-De-Citas-v2\CS\Datos\obj\Debug\Datos.pdb
 >>>>>>> refs/remotes/origin/master
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\Datos.dll.config
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\Datos.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\Datos.pdb
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\EntityFramework.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\EntityFramework.xml
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\obj\Debug\Datos.FunctionTable.Resource.resources
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\obj\Debug\Datos.csproj.GenerateResource.Cache
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\obj\Debug\Datos.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Datos\obj\Debug\Datos.pdb

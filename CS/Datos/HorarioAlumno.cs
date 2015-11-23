@@ -15,9 +15,8 @@ namespace Datos
     public partial class HorarioAlumno
     {
         public int HorarioAlumnoID { get; set; }
-        public string AlumnoID { get; set; }
-        public Nullable<int> MateriaGrupoID { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public Nullable<int> AlumnoID { get; set; }
+        public Nullable<int> MeteriaGrupoID { get; set; }
     
         public virtual Alumno Alumno { get; set; }
     }

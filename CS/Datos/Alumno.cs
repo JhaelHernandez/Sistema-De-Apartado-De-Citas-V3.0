@@ -17,12 +17,20 @@ namespace Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Alumno()
         {
+            this.Cita = new HashSet<Cita>();
             this.HorarioAlumno = new HashSet<HorarioAlumno>();
         }
     
-        public string AlumnoID { get; set; }
-        public Nullable<int> CitaID { get; set; }
+        public int AlumnoID { get; set; }
+        public string contraseña { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+        public int CarreraID { get; set; }
+        public int CitaID { get; set; }
     
+        public virtual Carrera Carrera { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cita> Cita { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HorarioAlumno> HorarioAlumno { get; set; }
     }

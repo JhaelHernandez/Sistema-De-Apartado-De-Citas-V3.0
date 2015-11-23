@@ -18,7 +18,7 @@ namespace Datos
         public Carrera()
         {
             this.CarreraMaestro = new HashSet<CarreraMaestro>();
-            this.Usuario = new HashSet<Usuario>();
+            this.Coordinador = new HashSet<Coordinador>();
         }
     
         public int CarreraID { get; set; }
@@ -26,10 +26,11 @@ namespace Datos
         public string ReticulaID { get; set; }
         public Nullable<bool> Activo { get; set; }
     
+        public virtual Alumno Alumno { get; set; }
         public virtual Reticula Reticula { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CarreraMaestro> CarreraMaestro { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual ICollection<Coordinador> Coordinador { get; set; }
     }
 }

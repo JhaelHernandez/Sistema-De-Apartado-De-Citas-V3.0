@@ -49,3 +49,19 @@ C:\Users\Alejandro\Documents\GitHub\Sistema-Apartado-De-Citas-v2\CS\Negosios\obj
 C:\Users\Alejandro\Documents\GitHub\Sistema-Apartado-De-Citas-v2\CS\Negosios\obj\Debug\Negocios.dll
 C:\Users\Alejandro\Documents\GitHub\Sistema-Apartado-De-Citas-v2\CS\Negosios\obj\Debug\Negocios.pdb
 >>>>>>> refs/remotes/origin/master
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\Negocios.dll.config
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\Negocios.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\Negocios.pdb
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\Datos.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\EntityFramework.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\Datos.pdb
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\EntityFramework.xml
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\obj\Debug\Negocios.FunctionTable.Resource.resources
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\obj\Debug\Negocios.csproj.GenerateResource.Cache
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\obj\Debug\Negocios.dll
+C:\Users\leonardo\Documents\GitHub\Sistema-De-Apartado-De-Citas-V3.0\CS\Negosios\obj\Debug\Negocios.pdb

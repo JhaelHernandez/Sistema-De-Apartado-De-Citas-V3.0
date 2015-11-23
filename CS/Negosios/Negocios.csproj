@@ -83,17 +83,17 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Servicios\CarreraServicio.cs" />
-
     <Compile Include="Servicios\AlumnoCitaServicio.cs" />
     <Compile Include="Servicios\CitaServicio.cs" />
     <Compile Include="Servicios\CoordinadorCitaServicio.cs" />
+    <Compile Include="Servicios\DiaMateriaServicio.cs" />
+    <Compile Include="Servicios\GrupoServicio.cs" />
     <Compile Include="Servicios\MaestroServicio.cs" />
     <Compile Include="Servicios\MateriaServicio.cs" />
+    <Compile Include="Servicios\MateriasSemestreServicio.cs" />
     <Compile Include="Servicios\ReticulaMateriaServicio.cs" />
     <Compile Include="Servicios\ReticulaServicio.cs" />
-
     <Compile Include="Servicios\UsuarioServicio.cs" />
   </ItemGroup>
   <ItemGroup>

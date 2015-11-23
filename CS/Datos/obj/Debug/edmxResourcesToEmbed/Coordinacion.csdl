@@ -73,6 +73,8 @@
     <NavigationProperty Name="MateriaDelGrupo" Relationship="Self.FK_Grupo_MateriaDelGrupo" FromRole="Grupo" ToRole="MateriaDelGrupo" />
     <NavigationProperty Name="Semestre" Relationship="Self.FK_Semestre_Grupo" FromRole="Grupo" ToRole="Semestre" />
     <Property Name="Activo" Type="Boolean" />
+    <Property Name="Grupo11" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="MateriaDelGrupo1" Relationship="CoordinacionModel.FK_MateriaDelGrupo_Grupo" FromRole="Grupo" ToRole="MateriaDelGrupo" />
   </EntityType>
   <EntityType Name="HorarioAlumno">
     <Key>
@@ -116,6 +118,8 @@
     <NavigationProperty Name="DiaMateria" Relationship="Self.FK_DiaMateria_MateriaDelGrupo" FromRole="MateriaDelGrupo" ToRole="DiaMateria" />
     <NavigationProperty Name="Grupo" Relationship="Self.FK_Grupo_MateriaDelGrupo" FromRole="MateriaDelGrupo" ToRole="Grupo" />
     <Property Name="Activo" Type="Boolean" />
+    <Property Name="GrupoID" Type="Int32" />
+    <NavigationProperty Name="Grupo1" Relationship="CoordinacionModel.FK_MateriaDelGrupo_Grupo" FromRole="MateriaDelGrupo" ToRole="Grupo" />
   </EntityType>
   <EntityType Name="MateriasSemestre">
     <Key>
@@ -157,6 +161,7 @@
     <NavigationProperty Name="Grupo" Relationship="Self.FK_Semestre_Grupo" FromRole="Semestre" ToRole="Grupo" />
     <NavigationProperty Name="SemestreHorario" Relationship="Self.FK_SemestreHorario_Semestre" FromRole="Semestre" ToRole="SemestreHorario" />
     <Property Name="Activo" Type="Boolean" />
+    <Property Name="Semestre11" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="SemestreHorario">
     <Key>
@@ -431,6 +436,11 @@
       <End Role="ReticulaMateria" EntitySet="ReticulaMateria" />
       <End Role="ReticulaMateria1" EntitySet="ReticulaMateria" />
     </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="CoordinacionModel.sysdiagrams" />
+    <AssociationSet Name="FK_MateriaDelGrupo_Grupo" Association="CoordinacionModel.FK_MateriaDelGrupo_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="MateriaDelGrupo" EntitySet="MateriaDelGrupo" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_ReticulaMateria_ReticulaMateria">
     <End Type="CoordinacionModel.ReticulaMateria" Role="ReticulaMateria" Multiplicity="1" />
@@ -441,6 +451,28 @@
       </Principal>
       <Dependent Role="ReticulaMateria1">
         <PropertyRef Name="ReiticulaMateriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_MateriaDelGrupo_Grupo">
+    <End Type="CoordinacionModel.Grupo" Role="Grupo" Multiplicity="1" />
+    <End Type="CoordinacionModel.MateriaDelGrupo" Role="MateriaDelGrupo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="GrupoID" />
+      </Principal>
+      <Dependent Role="MateriaDelGrupo">
+        <PropertyRef Name="MateriaGrupoID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

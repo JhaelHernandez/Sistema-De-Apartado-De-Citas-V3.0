@@ -35,7 +35,7 @@ namespace Negocios.Servicios
         public Cita ObtenerCitaPor(string coordinadorID, int citaId)
         {
             var cita = (from u in db.Cita where u.CitaID.Equals(citaId) && u.CoordinadorID.Equals(coordinadorID) select u).FirstOrDefault();
-
+           
             return cita;
         }
 

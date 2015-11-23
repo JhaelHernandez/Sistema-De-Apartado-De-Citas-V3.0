@@ -18,14 +18,17 @@ namespace Datos
         public Coordinador()
         {
             this.Cita = new HashSet<Cita>();
-            this.SemestreHorario = new HashSet<SemestreHorario>();
         }
     
-        public string CoordinadorID { get; set; }
+        public int CoordinadorID { get; set; }
+        public string Contraseña { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+        public Nullable<int> CarreraID { get; set; }
+        public Nullable<bool> Activo { get; set; }
     
+        public virtual Carrera Carrera { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cita> Cita { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SemestreHorario> SemestreHorario { get; set; }
     }
 }

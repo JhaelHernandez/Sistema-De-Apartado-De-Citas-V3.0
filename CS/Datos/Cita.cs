@@ -15,13 +15,14 @@ namespace Datos
     public partial class Cita
     {
         public int CitaID { get; set; }
-        public string CoordinadorID { get; set; }
-        public System.TimeSpan Hora { get; set; }
-        public System.DateTime Fecha { get; set; }
+        public int CoordinadorID { get; set; }
+        public Nullable<int> AlumnoID { get; set; }
         public int Estado { get; set; }
         public string Mensaje { get; set; }
-        public string AlumnoID { get; set; }
+        public System.DateTime Fehca { get; set; }
+        public System.TimeSpan Hora { get; set; }
     
+        public virtual Alumno Alumno { get; set; }
         public virtual Coordinador Coordinador { get; set; }
     }
 }

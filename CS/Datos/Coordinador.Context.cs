@@ -13,10 +13,10 @@ namespace Datos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CoordinacionEntities : DbContext
+    public partial class CoordinacionEntities2 : DbContext
     {
-        public CoordinacionEntities()
-            : base("name=CoordinacionEntities")
+        public CoordinacionEntities2()
+            : base("name=CoordinacionEntities2")
         {
         }
     
@@ -41,6 +41,6 @@ namespace Datos
         public virtual DbSet<ReticulaMateria> ReticulaMateria { get; set; }
         public virtual DbSet<Semestre> Semestre { get; set; }
         public virtual DbSet<SemestreHorario> SemestreHorario { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

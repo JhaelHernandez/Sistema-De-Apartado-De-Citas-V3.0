@@ -14,13 +14,19 @@ namespace Datos
     
     public partial class Grupo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Grupo()
+        {
+            this.MateriaDelGrupo = new HashSet<MateriaDelGrupo>();
+        }
+    
         public int GrupoID { get; set; }
         public string Grupo1 { get; set; }
         public string Turno { get; set; }
-        public int MateriaGrupoID { get; set; }
         public Nullable<bool> Activo { get; set; }
     
-        public virtual MateriaDelGrupo MateriaDelGrupo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MateriaDelGrupo> MateriaDelGrupo { get; set; }
         public virtual Semestre Semestre { get; set; }
     }
 }

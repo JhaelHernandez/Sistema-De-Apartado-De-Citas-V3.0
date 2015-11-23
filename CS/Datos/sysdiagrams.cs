@@ -12,15 +12,12 @@ namespace Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class sysdiagrams
     {
-        public string NoControl { get; set; }
-        public string Contraseña { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public int CarreraID { get; set; }
-        public Nullable<bool> Activo { get; set; }
-    
-        public virtual Carrera Carrera { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
